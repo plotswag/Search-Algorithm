@@ -19,43 +19,88 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ``` 
-Program to mark the maximum of marks using the list method sort
-Developed by: jeevanesh
-RegisterNumber: 23013802
+''' 
+Program for linear search method to match the item in a list
+Developed by:Jeevanesh
+RegisterNumber: 212222243002
 '''
-def max_marks(marks):
-    marks.sort()
-    max=marks[-1]
-    return max
+def linearSearch(array,n,k):
+    for i in range(0 , n):
+        if(array[i]==k):
+            return i
+    return -1        
+array = eval(input())
+k=eval(input())
+n=len(array)
+array.sort()
+result = linearSearch(array,n,k)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ", result)
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ``` 
-Program to find the maximum marks using the list method max().
-Developed by: jeevanesh
-RegisterNumber: 23013802
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:Jeevanesh
+RegisterNumber: 212222243002
 '''
-def max_marks(marks):
-    max_value=max(marks)
-    return max_value    
+def binarySearch(arr, k, low, high):
+    while low <= high:
+        mid = low + (high - low)//2
+        if arr[mid] == k:
+            return mid
+        elif arr[mid]<k:
+            low=mid + 1
+        else:
+            high = mid -1
+    return -1
+arr = eval(input())
+arr.sort()
+k=eval(input())
+result=binarySearch(arr,k,0,len(arr)-1)
+if(result ==-1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ",result)   
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
 ''' 
-Program to the maximum marks without using builtin functions.
-Developed by: jeevanesh
-RegisterNumber: 23013802
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by:Jeevanesh
+RegisterNumber:212222243002 
 '''
-def max_marks(list1):
-    max= list1[0]
-    for i in list1:
-        if i>max:
-            max=i
-    return max        
+def BinarySearch(arr, k, low, high):
+    while low <= high:
+        mid= low +(high - low)//2
+        if arr[mid]==k:
+            return mid 
+        elif arr[mid] <k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+
+arr=eval(input())
+arr.sort()
+k=eval(input())
+result=BinarySearch(arr,k,0,len(arr)-1)
+if(result==-1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ",result)
 ```
 ## Sample Input and Output
-![image](https://github.com/plotswag/Search-Algorithm/assets/145822344/62da807d-6cb3-4ba8-998b-2349360e4a73)
-![image](https://github.com/plotswag/Search-Algorithm/assets/145822344/410f9779-861e-407c-ba3a-80d4a3e62aba)
-![image](https://github.com/plotswag/Search-Algorithm/assets/145822344/8b4e0c4a-8317-4550-95c0-fe74742813a3)
-
+![image](https://github.com/plotswag/Search-Algorithm/assets/145822344/b7dae27c-fc3d-4ca9-a4c9-79b617cd13aa)
+![image](https://github.com/plotswag/Search-Algorithm/assets/145822344/91649213-aede-44fd-b0c1-ddd6dfe7661b)
+![image](https://github.com/plotswag/Search-Algorithm/assets/145822344/164f6611-0c3e-4a42-b049-4b248ed27417)
 ## Result
 Thus the linear search and binary search algorithm is implemented using python programming.
